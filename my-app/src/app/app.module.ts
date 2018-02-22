@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
-import { StudentComponent } from './student/student.component';
+import { StudentComponent } from './student/list/student.component';
 import { AddCourseComponent } from './course/add-course/add-course.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {CourseRoutingModule} from "./course/course-routing.module";
+import { TeacherComponent } from './teacher/list/teacher.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {CourseRoutingModule} from "./course/course-routing.module";
     LoginComponent,
     MenuComponent,
     StudentComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    TeacherComponent
   ],
   imports: [
     BrowserModule,CourseRoutingModule,AppRoutingModule
