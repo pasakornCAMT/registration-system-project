@@ -7,6 +7,7 @@ import { StudentComponent } from './student/student.component';
 import { AddCourseComponent } from './course/add-course/add-course.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {CourseRoutingModule} from "./course/course-routing.module";
+import { ViewCourseComponent } from './course/view-course/view-course.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {CourseRoutingModule} from "./course/course-routing.module";
     LoginComponent,
     MenuComponent,
     StudentComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    ViewCourseComponent
   ],
   imports: [
     BrowserModule,CourseRoutingModule,AppRoutingModule
