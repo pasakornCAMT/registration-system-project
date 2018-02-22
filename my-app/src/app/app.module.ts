@@ -8,12 +8,13 @@ import { MenuComponent } from './menu/menu.component';
 import { StudentComponent } from './student/student.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MenuComponent,
-    StudentComponent
+    StudentComponent,
   ],
   imports: [
     BrowserModule
