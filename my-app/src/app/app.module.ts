@@ -11,6 +11,7 @@ import { TeacherComponent } from './teacher/view-teacher/teacher.component';
 import { ViewCourseComponent } from './course/view-course/view-course.component';
 import { ListCourseComponent } from './course/list-course/list-course.component';
 import {StudentRoutingModule} from './student/student-routing.module';
+import {TeacherRoutingModule} from './teacher/teacher-routing.module';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import {StudentRoutingModule} from './student/student-routing.module';
     ListCourseComponent
   ],
   imports: [
-    BrowserModule,CourseRoutingModule,StudentRoutingModule,AppRoutingModule
+    BrowserModule,CourseRoutingModule,StudentRoutingModule,TeacherRoutingModule,AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
