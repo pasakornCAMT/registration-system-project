@@ -56,4 +56,9 @@
       </div>
     </div>
   </form>
+
+  <div *ngFor="let course of courses">
+    <h2> {{course.courseId}} {{course.name}}</h2>
+  </div>
+
 </div>

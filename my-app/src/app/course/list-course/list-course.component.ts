@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {Course} from "../course";
+import {COURSES} from "../../mocks";
 
 @Component({
   selector: 'app-list-course',
@@ -9,8 +11,9 @@ import {Router} from "@angular/router";
 export class ListCourseComponent implements OnInit {
 
   constructor(private router:Router) { }
-
+  courses:Course[];
   ngOnInit() {
+      this.courses=COURSES;
   }
 
   showDetail(){
