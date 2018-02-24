@@ -11,19 +11,19 @@
               <div class="form-group row">
                 <label id="studentName" class="col-sm-3">Name :</label>
                 <div class="col-sm-9">
-                  <label >Prayuth</label>
+                  <label>Prayuth</label>
                 </div>
               </div>
               <div class="form-group row">
                 <label id="studentSurname" class="col-sm-3">Surname :</label>
                 <div class="col-sm-9">
-                  <label >Jun-O-sha</label>
+                  <label>Jun-O-sha</label>
                 </div>
               </div>
               <div class="form-group row">
                 <label id="studentID" class="col-sm-3">Student ID :</label>
                 <div class="col-sm-9">
-                  <label >582119999</label>
+                  <label>582119999</label>
                 </div>
               </div>
             </div>
@@ -43,21 +43,67 @@
               ENROLLED COURSE
             </div>
             <div class="card-body">
-              <div *ngFor="let course of courses">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Course ID</th>
+                  <th>Course Name</th>
+                  <th>Credit</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let course of courses; let i = index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{course.courseId}}</td>
+                  <td>{{course.name}}</td>
+                  <td>{{course.credit}}</td>
+                  <td>
+                    <button class="btn btn-outline-primary" type="button" (click)="showDetail()">View</button>
+                  </td>
+                  <td>
+                    <button class="btn btn-outline-danger" type="button">Remove</button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Total</th>
+                  <td></td>
+                  <td></td>
+                  <td>{{totalCredit}}</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="container">
+  <form>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto mt-5">
+          <div class="card">
+            <div class="card-header text-center">
+              TUITION FEE
+            </div>
+            <div class="card-body">
               <div class="form-group row">
-                <label class="col-sm-3 col-form-label">{{course.courseId}}</label>
+                <label class="col-sm-3 col-form-label">Tuition fee: </label>
                 <div class="col-sm-9">
                   <div class="input-group mb-3">
-                    <label class="form-control">{{course.name}}</label>
+                    <label class="form-control">{{totalFee}} THB</label>
                     <div class="input-group-append">
-                      <button class="btn btn-outline-primary" type="button" (click)="showDetail()">View</button>
-                    </div>
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-danger" type="button">Remove</button>
+                      <button class="btn btn-outline-success" type="button" (click)="showGrading()">Pay</button>
                     </div>
                   </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>
@@ -66,3 +112,5 @@
     </div>
   </form>
 </div>
+
+
