@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from '../../course/course';
 import {COURSES} from '../../mocks';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-student',
@@ -9,7 +10,7 @@ import {COURSES} from '../../mocks';
 })
 export class StudentComponent implements OnInit {
 
-  constructor() {
+  constructor(private router:Router) {
   }
 
   courses: Course[];
@@ -28,6 +29,9 @@ export class StudentComponent implements OnInit {
     this.totalCredit = result;
     this.totalFee = result*20;
 
+  }
+  viewGPA(){
+    this.router.navigate(['/view-student-gpa']);
   }
 
 
