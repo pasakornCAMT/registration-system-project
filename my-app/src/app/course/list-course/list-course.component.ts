@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {Course} from "../course";
-import {COURSES} from "../../mocks";
+import {COURSES, TEACHERS} from "../../mocks";
+import {Teacher} from "../../teacher/teacher";
+import {element} from "protractor";
 
 @Component({
   selector: 'app-list-course',

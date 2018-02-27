@@ -5,4 +5,5 @@ export class Course{
   name:string;
   seat:number;
   credit:number;
+  teaching_course:string[];
 }

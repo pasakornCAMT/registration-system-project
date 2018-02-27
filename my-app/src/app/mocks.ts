@@ -7,21 +7,30 @@ export const COURSES: Course[]=[
     'courseId':'021251',
     'name':'Mathematics',
     'seat':30,
-    'credit':3
+    'credit':3,
+    'teaching_course':[
+      '001','002'
+    ]
   },
   {
     'id':2,
     'courseId':'953322',
     'name':'Software construct',
     'seat':50,
-    'credit':3
+    'credit':3,
+    'teaching_course':[
+      '001'
+    ]
   },
   {
     'id':3,
     'courseId':'954441',
     'name':'Android Application',
     'seat':30,
-    'credit':3
+    'credit':3,
+    'teaching_course':[
+      '002'
+    ]
   }
 ];
 
