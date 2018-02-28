@@ -17,5 +17,4 @@ export class ViewCourseComponent implements OnInit {
     this.courses=COURSES;
     this.teachers=TEACHERS;
   }
-
 }
