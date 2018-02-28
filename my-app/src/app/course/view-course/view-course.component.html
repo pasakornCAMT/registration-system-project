@@ -47,15 +47,15 @@
     </div>
   </form>
 
-  <div *ngFor="let course of courses">
-    {{course.courseId}} {{course.name}}
-    <div *ngFor="let teacher of teachers">
-      <div *ngFor="let courseIn of course.teaching_course">
-        <div *ngIf="courseIn == teacher.teacherId">
-          {{teacher.teacherId}} {{teacher.name}}
-        </div>
-      </div>
-    </div>
-  </div>
+  <!--<div *ngFor="let course of courses">-->
+    <!--{{course.courseId}} {{course.name}}-->
+    <!--<div *ngFor="let teacher of teachers">-->
+      <!--<div *ngFor="let courseIn of course.teaching_course">-->
+        <!--<div *ngIf="courseIn == teacher.teacherId">-->
+          <!--{{teacher.teacherId}} {{teacher.name}}-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
 
 </div>
