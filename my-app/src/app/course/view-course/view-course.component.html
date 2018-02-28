@@ -11,7 +11,7 @@
               <div class="form-group row">
                 <label id="courseName" class="col-sm-3">Course Name :</label>
                 <div class="col-sm-9">
-                  <label >Mathematic</label>
+                  <label >Mathematics</label>
                 </div>
               </div>
               <div class="form-group row">
@@ -47,15 +47,15 @@
     </div>
   </form>
 
-  <div *ngFor="let course of courses">
-    {{course.courseId}} {{course.name}}
-    <div *ngFor="let teacher of teachers">
-      <div *ngFor="let courseIn of course.teaching_course">
-        <div *ngIf="courseIn == teacher.teacherId">
-          {{teacher.teacherId}} {{teacher.name}}
-        </div>
-      </div>
-    </div>
-  </div>
+  <!--<div *ngFor="let course of courses">-->
+    <!--{{course.courseId}} {{course.name}}-->
+    <!--<div *ngFor="let teacher of teachers">-->
+      <!--<div *ngFor="let courseIn of course.teaching_course">-->
+        <!--<div *ngIf="courseIn == teacher.teacherId">-->
+          <!--{{teacher.teacherId}} {{teacher.name}}-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
 
 </div>
