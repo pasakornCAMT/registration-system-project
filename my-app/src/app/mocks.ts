@@ -8,6 +8,8 @@ export const COURSES: Course[]=[
     'name':'Mathematics',
     'seat':30,
     'credit':3,
+    'semester':'1',
+    'year':2018,
     'teaching_course':[
       '001','002'
     ]
@@ -18,6 +20,8 @@ export const COURSES: Course[]=[
     'name':'Software construct',
     'seat':50,
     'credit':3,
+    'semester':'summer',
+    'year':2018,
     'teaching_course':[
       '001'
     ]
@@ -28,6 +32,8 @@ export const COURSES: Course[]=[
     'name':'Android Application',
     'seat':30,
     'credit':3,
+    'semester':'2',
+    'year':2018,
     'teaching_course':[
       '002'
     ]

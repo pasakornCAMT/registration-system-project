@@ -17,6 +17,7 @@ export class AddCourseComponent implements OnInit {
 
   addCourse(course:Course){
     COURSES.push(course);
+    console.log(this.course.semester);
     this.router.navigate(['/course-list'])
   }
 
