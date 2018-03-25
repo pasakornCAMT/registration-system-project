@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {Course} from "../course";
 import {COURSES, TEACHERS} from "../../mocks";
-import {Teacher} from "../../teacher/teacher";
-import {element} from "protractor";
 
 @Component({
   selector: 'app-list-course',
@@ -14,11 +12,17 @@ export class ListCourseComponent implements OnInit {
 
   constructor(private router:Router) { }
   courses:Course[];
+  course:any = {};
   ngOnInit() {
       this.courses=COURSES;
   }
 
   showDetail(){
     this.router.navigate(['/view-course']);
+  }
+
+  enrollCourse(course:Course){
+    COURSES.push(course);
+    this.router.navigate(['view-student'])
   }
 }
