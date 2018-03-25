@@ -34,4 +34,12 @@ export class StudentComponent implements OnInit {
   viewGPA(){
     this.router.navigate(['/view-student-gpa']);
   }
+
+  removeCourse(index:number){
+    let c = confirm("Are you sure to remove this course");
+    if(c == true){
+      COURSES.splice(index,1);
+    }
+
+  }
 }
