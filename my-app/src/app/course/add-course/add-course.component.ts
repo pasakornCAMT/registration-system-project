@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Course} from '../course';
+import {COURSES} from '../../mocks';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-course',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-course.component.css']
 })
 export class AddCourseComponent implements OnInit {
-
-  constructor() { }
-
+  constructor(private router:Router) {
+  }
+  course:any = {};
   ngOnInit() {
+  }
+
+  addCourse(course:Course){
+    COURSES.push(course);
+    console.log(this.course.semester);
+    this.router.navigate(['/course-list'])
   }
 
 }

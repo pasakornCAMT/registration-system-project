@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Course} from '../../course/course';
 import {COURSES} from '../../mocks';
 import {Router} from '@angular/router';
+import index from "@angular/cli/lib/cli";
 
 @Component({
   selector: 'app-student',
@@ -34,5 +35,11 @@ export class StudentComponent implements OnInit {
     this.router.navigate(['/view-student-gpa']);
   }
 
+  removeCourse(index:number){
+    let c = confirm("Are you sure to remove this course");
+    if(c == true){
+      COURSES.splice(index,1);
+    }
 
+  }
 }

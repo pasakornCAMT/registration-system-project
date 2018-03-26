@@ -14,6 +14,7 @@ import {StudentRoutingModule} from './student/student-routing.module';
 import {TeacherRoutingModule} from './teacher/teacher-routing.module';
 import { GradingComponent } from './teacher/grading/grading.component';
 import { ViewStudentGpaComponent } from './student/view-student-gpa/view-student-gpa.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { ViewStudentGpaComponent } from './student/view-student-gpa/view-student
     ViewStudentGpaComponent
   ],
   imports: [
-    BrowserModule,CourseRoutingModule,StudentRoutingModule,TeacherRoutingModule,AppRoutingModule
+    BrowserModule,CourseRoutingModule,StudentRoutingModule,TeacherRoutingModule,AppRoutingModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
