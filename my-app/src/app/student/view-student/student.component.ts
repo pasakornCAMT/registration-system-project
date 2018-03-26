@@ -42,4 +42,7 @@ export class StudentComponent implements OnInit {
     }
 
   }
+  showDetail(){
+    this.router.navigate(['view-course'])
+  }
 }

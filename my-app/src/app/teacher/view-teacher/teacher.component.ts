@@ -18,5 +18,8 @@ export class TeacherComponent implements OnInit {
   showGrading(){
     this.router.navigate(['/grading']);
   }
+  showDetail(){
+    this.router.navigate(['view-course'])
+  }
 
 }
