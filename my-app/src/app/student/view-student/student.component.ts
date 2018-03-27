@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from '../../course/course';
-import {COURSES} from '../../mocks';
+import {COURSES, STUDENTS} from '../../mocks';
 import {Router} from '@angular/router';
-import index from "@angular/cli/lib/cli";
+import {DataService} from '../../service/data.service';
+import {Student} from '../student';
 
 @Component({
   selector: 'app-student',
@@ -10,15 +11,19 @@ import index from "@angular/cli/lib/cli";
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-
-  constructor(private router:Router) {
-  }
-
-  courses: Course[];
+  courses: Course[]=[];
   totalCredit:number;
   totalFee:number;
+  student:Student;
+  data:string;
+  constructor(private router:Router,public dataService:DataService) {
+
+  }
+
   ngOnInit() {
-    this.courses = COURSES;
+    this.data = this.dataService.dataFromService;
+    this.student = this.findStudentByEmail(this.data)
+    this.generateCourseData();
     this.calculateCredit();
   }
 
@@ -42,7 +47,18 @@ export class StudentComponent implements OnInit {
     }
 
   }
-  showDetail(){
+  showDetail(id:string){
+    this.dataService.dataFromService = id;
     this.router.navigate(['view-course'])
+  }
+  findStudentByEmail(email:string){
+    let student;
+    student = STUDENTS.find(x => x.email == email);
+    return student
+  }
+  generateCourseData(){
+    for(let i = 0 ; i < this.student.enrolled_course.length ; i++){
+      this.courses.push(COURSES.find(x => x.courseId == this.student.enrolled_course[i]));
+    }
   }
 }

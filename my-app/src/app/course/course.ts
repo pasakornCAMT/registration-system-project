@@ -8,4 +8,5 @@ export class Course{
   semester:string;
   year:number;
   teaching_course:string[];
+  student_course:string[];
 }

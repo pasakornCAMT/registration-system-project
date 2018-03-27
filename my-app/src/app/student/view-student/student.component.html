@@ -11,19 +11,19 @@
               <div class="form-group row">
                 <label id="studentName" class="col-sm-3">Name :</label>
                 <div class="col-sm-9">
-                  <label>Prayuth</label>
+                  <label>{{student.name}}</label>
                 </div>
               </div>
               <div class="form-group row">
                 <label id="studentSurname" class="col-sm-3">Surname :</label>
                 <div class="col-sm-9">
-                  <label>Jun-O-sha</label>
+                  <label>{{student.surname}}</label>
                 </div>
               </div>
               <div class="form-group row">
                 <label id="studentID" class="col-sm-3">Student ID :</label>
                 <div class="col-sm-9">
-                  <label>582119999</label>
+                  <label>{{student.studentId}}</label>
                 </div>
               </div>
             </div>
@@ -61,7 +61,7 @@
                   <td>{{course.name}}</td>
                   <td>{{course.credit}}</td>
                   <td>
-                    <button class="btn btn-outline-primary" type="button" (click)="showDetail()">View</button>
+                    <button class="btn btn-outline-primary" type="button" (click)="showDetail(course.courseId)">View</button>
                   </td>
                   <td>
                     <button class="btn btn-outline-danger" type="button" (click)="removeCourse(i)">Remove</button>

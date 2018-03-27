@@ -1,5 +1,6 @@
 import {Course} from "./course/course";
 import {Teacher} from "./teacher/teacher";
+import {Student} from './student/student';
 
 export const COURSES: Course[]=[
   {
@@ -12,6 +13,9 @@ export const COURSES: Course[]=[
     'year':2018,
     'teaching_course':[
       '001','002'
+    ],
+    'student_course':[
+      '582115040','582115999'
     ]
   },
   {
@@ -24,6 +28,9 @@ export const COURSES: Course[]=[
     'year':2018,
     'teaching_course':[
       '001'
+    ],
+    'student_course':[
+      '582115040','582115999','582115000'
     ]
   },
   {
@@ -36,6 +43,9 @@ export const COURSES: Course[]=[
     'year':2018,
     'teaching_course':[
       '002'
+    ],
+    'student_course':[
+      '582115040'
     ]
   }
 ];
@@ -46,11 +56,57 @@ export const TEACHERS: Teacher[]=[
     'teacherId':'001',
     'name':'Yingluck',
     'surname':'Chinnawat',
+    'email':'teacher1@cmuTEA.ac.th',
+    'password':'1',
+    'teaching_course':[
+      '021251','953322'
+    ]
   },
   {
     'id':2,
     'teacherId':'002',
     'name':'Mark',
-    'surname':'Apisit'
+    'surname':'Apisit',
+    'email':'teacher2@cmuTEA.ac.th',
+    'password':'2',
+    'teaching_course':[
+      '021251','954441'
+    ]
+  }
+];
+
+export const STUDENTS: Student[]=[
+  {
+    'id':1,
+    'studentId':'582115040',
+    'name':'Pasakorn',
+    'surname':'Kunchai',
+    'enrolled_course':[
+      '021251','953322','954441'
+    ],
+    'email':'student1@cmuSTU.ac.th',
+    'password':'1'
+  },
+  {
+    'id':2,
+    'studentId':'582115999',
+    'name':'John',
+    'surname':'Smith',
+    'enrolled_course':[
+      '021251','953322'
+    ],
+    'email':'student2@cmuSTU.ac.th',
+    'password':'2'
+  },
+  {
+    'id':3,
+    'studentId':'582115000',
+    'name':'Yoko',
+    'surname':'Yamada',
+    'enrolled_course':[
+      '953322'
+    ],
+    'email':'student3@cmuSTU.ac.th',
+    'password':'3'
   }
 ];
