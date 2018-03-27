@@ -4,4 +4,6 @@ export class Student{
   name:string;
   surname:string;
   enrolled_course:string[];
+  email:string;
+  password:string;
 }

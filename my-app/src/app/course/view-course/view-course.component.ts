@@ -3,7 +3,6 @@ import {Course} from "../course";
 import {Teacher} from "../../teacher/teacher";
 import {COURSES, TEACHERS} from "../../mocks";
 import {DataService} from '../../service/data.service';
-import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-view-course',
@@ -16,12 +15,12 @@ export class ViewCourseComponent implements OnInit {
   data:string;
 
   constructor(public dataService:DataService) {
-    this.data = this.dataService.dataFromService;
-    this.course = this.findCourseById(this.data);
-    this.generateTeacherData();
   }
 
   ngOnInit() {
+    this.data = this.dataService.dataFromService;
+    this.course = this.findCourseById(this.data);
+    this.generateTeacherData();
   }
 
   findCourseById(id:string){
