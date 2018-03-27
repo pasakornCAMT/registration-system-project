@@ -15,6 +15,7 @@ import {TeacherRoutingModule} from './teacher/teacher-routing.module';
 import { GradingComponent } from './teacher/grading/grading.component';
 import { ViewStudentGpaComponent } from './student/view-student-gpa/view-student-gpa.component';
 import {FormsModule} from '@angular/forms';
+import {DataService} from './service/data.service';
 
 
 @NgModule({
@@ -28,12 +29,12 @@ import {FormsModule} from '@angular/forms';
     ViewCourseComponent,
     ListCourseComponent,
     GradingComponent,
-    ViewStudentGpaComponent
+    ViewStudentGpaComponent,
   ],
   imports: [
     BrowserModule,CourseRoutingModule,StudentRoutingModule,TeacherRoutingModule,AppRoutingModule,FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

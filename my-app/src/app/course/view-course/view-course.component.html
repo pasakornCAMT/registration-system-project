@@ -5,50 +5,72 @@
         <div class="col-md-8 mx-auto mt-5">
           <div class="card">
             <div class="card-header text-center">
-              VIEW COURSE
+              COURSE INFORMATION
             </div>
             <div class="card-body">
               <div class="form-group row">
-                <label id="courseName" class="col-sm-3">Course Name :</label>
-                <div class="col-sm-9">
-                  <label >Mathematics</label>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label id="courseID" class="col-sm-3">Course ID :</label>
-                <div class="col-sm-9">
-                  <label >021251</label>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label id="maximumStudents" class="col-sm-3 ">Max. Students :</label>
-                <div class="col-sm-9">
-                  <label>30</label>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label id="credit" class="col-sm-3 ">Credit :</label>
-                <div class="col-sm-9">
-                  <label >3</label>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label id="semester" class="col-sm-3 ">Semester :</label>
-                <div class="col-sm-9">
-                  <label >1</label>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label id="year" class="col-sm-3 ">Year :</label>
-                <div class="col-sm-9">
-                  <label >2018</label>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label id="teacher" class="col-sm-3 ">Teacher :</label>
+                <label class="col-sm-3 col-form-label">Course name: </label>
                 <div class="col-sm-9">
                   <div class="input-group mb-3">
-                    <label>Dr. Prompong</label>
+                    <label class="form-control">{{course.name}}</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Course ID: </label>
+                <div class="col-sm-9">
+                  <div class="input-group mb-3">
+                    <label class="form-control">{{course.courseId}}</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Course seat: </label>
+                <div class="col-sm-9">
+                  <div class="input-group mb-3">
+                    <label class="form-control">{{course.seat}}</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Course seat: </label>
+                <div class="col-sm-9">
+                  <div class="input-group mb-3">
+                    <label class="form-control">{{course.seat}}</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Credit: </label>
+                <div class="col-sm-9">
+                  <div class="input-group mb-3">
+                    <label class="form-control">{{course.credit}}</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Semester: </label>
+                <div class="col-sm-9">
+                  <div class="input-group mb-3">
+                    <label class="form-control">{{course.semester}}</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Year: </label>
+                <div class="col-sm-9">
+                  <div class="input-group mb-3">
+                    <label class="form-control">{{course.year}}</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Teacher(s): </label>
+                <div class="col-sm-9">
+                  <div *ngFor="let teacher of teachers">
+                    <div class="input-group mb-3">
+                      <label class="form-control">{{teacher.name}}&nbsp;{{teacher.surname}}</label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -58,16 +80,4 @@
       </div>
     </div>
   </form>
-
-  <!--<div *ngFor="let course of courses">-->
-    <!--{{course.courseId}} {{course.name}}-->
-    <!--<div *ngFor="let teacher of teachers">-->
-      <!--<div *ngFor="let courseIn of course.teaching_course">-->
-        <!--<div *ngIf="courseIn == teacher.teacherId">-->
-          <!--{{teacher.teacherId}} {{teacher.name}}-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-
 </div>

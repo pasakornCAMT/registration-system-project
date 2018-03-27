@@ -1,5 +1,6 @@
 import {Course} from "./course/course";
 import {Teacher} from "./teacher/teacher";
+import {Student} from './student/student';
 
 export const COURSES: Course[]=[
   {
@@ -12,6 +13,9 @@ export const COURSES: Course[]=[
     'year':2018,
     'teaching_course':[
       '001','002'
+    ],
+    'student_course':[
+      '582115040','582115999'
     ]
   },
   {
@@ -24,6 +28,9 @@ export const COURSES: Course[]=[
     'year':2018,
     'teaching_course':[
       '001'
+    ],
+    'student_course':[
+      '582115040','582115999','582115000'
     ]
   },
   {
@@ -36,6 +43,9 @@ export const COURSES: Course[]=[
     'year':2018,
     'teaching_course':[
       '002'
+    ],
+    'student_course':[
+      '582115040'
     ]
   }
 ];
@@ -52,5 +62,35 @@ export const TEACHERS: Teacher[]=[
     'teacherId':'002',
     'name':'Mark',
     'surname':'Apisit'
+  }
+];
+
+export const STUDENT: Student[]=[
+  {
+    'id':1,
+    'studentId':'582115040',
+    'name':'Pasakorn',
+    'surname':'Kunchai',
+    'enrolled_course':[
+      '021251','953322','954441'
+    ]
+  },
+  {
+    'id':2,
+    'studentId':'582115999',
+    'name':'John',
+    'surname':'Smith',
+    'enrolled_course':[
+      '021251','953322'
+    ]
+  },
+  {
+    'id':3,
+    'studentId':'582115000',
+    'name':'Yoko',
+    'surname':'Yamada',
+    'enrolled_course':[
+      '953322'
+    ]
   }
 ];

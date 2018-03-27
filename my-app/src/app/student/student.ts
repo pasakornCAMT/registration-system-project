@@ -3,4 +3,5 @@ export class Student{
   studentId:string;
   name:string;
   surname:string;
+  enrolled_course:string[];
 }

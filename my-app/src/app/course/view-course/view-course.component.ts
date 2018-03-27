@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Course} from "../course";
 import {Teacher} from "../../teacher/teacher";
 import {COURSES, TEACHERS} from "../../mocks";
+import {DataService} from '../../service/data.service';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-view-course',
@@ -9,12 +11,27 @@ import {COURSES, TEACHERS} from "../../mocks";
   styleUrls: ['./view-course.component.css']
 })
 export class ViewCourseComponent implements OnInit {
-  courses:Course[];
-  teachers:Teacher[];
-  constructor() { }
+  course:Course;
+  teachers:Teacher[]=[];
+  data:string;
+
+  constructor(public dataService:DataService) {
+    this.data = this.dataService.dataFromService;
+    this.course = this.findCourseById(this.data);
+    this.generateTeacherData();
+  }
 
   ngOnInit() {
-    this.courses=COURSES;
-    this.teachers=TEACHERS;
+  }
+
+  findCourseById(id:string){
+    let course;
+    course = COURSES.find(x => x.courseId == id);
+    return course
+  }
+  generateTeacherData(){
+    for(let i = 0 ; i < this.course.teaching_course.length ; i++){
+      this.teachers.push(TEACHERS.find(x => x.teacherId == this.course.teaching_course[i]));
+    }
   }
 }

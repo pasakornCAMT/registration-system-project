@@ -3,6 +3,7 @@ import {Course} from '../../course/course';
 import {COURSES} from '../../mocks';
 import {Router} from '@angular/router';
 import index from "@angular/cli/lib/cli";
+import {DataService} from '../../service/data.service';
 
 @Component({
   selector: 'app-student',
@@ -11,7 +12,7 @@ import index from "@angular/cli/lib/cli";
 })
 export class StudentComponent implements OnInit {
 
-  constructor(private router:Router) {
+  constructor(private router:Router,public dataService:DataService) {
   }
 
   courses: Course[];
@@ -42,7 +43,8 @@ export class StudentComponent implements OnInit {
     }
 
   }
-  showDetail(){
+  showDetail(id:string){
+    this.dataService.dataFromService = id;
     this.router.navigate(['view-course'])
   }
 }
