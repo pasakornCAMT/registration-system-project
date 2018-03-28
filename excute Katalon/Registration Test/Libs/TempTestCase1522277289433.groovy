@@ -13,13 +13,13 @@ DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.w
 DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.mobile.contribution.MobileDriverCleaner())
 
 
-RunConfiguration.setExecutionSettingFile('C:\\Users\\lenovo\\AppData\\Local\\Temp\\Katalon\\Test Cases\\UC-13 Login_FailCases\\UC-13 Login_Case03 - Copy\\20180329_050605\\execution.properties')
+RunConfiguration.setExecutionSettingFile('C:\\Users\\lenovo\\AppData\\Local\\Temp\\Katalon\\Test Cases\\UC-07 View tuition fee\\20180329_054809\\execution.properties')
 
 TestCaseMain.beforeStart()
 try {
     
-	    TestCaseMain.runTestCase('Test Cases/UC-13 Login_FailCases/UC-13 Login_Case03 - Copy', new TestCaseBinding('Test Cases/UC-13 Login_FailCases/UC-13 Login_Case03 - Copy', [:]), FailureHandling.STOP_ON_FAILURE )
+	    TestCaseMain.runTestCase('Test Cases/UC-07 View tuition fee', new TestCaseBinding('Test Cases/UC-07 View tuition fee', [:]), FailureHandling.STOP_ON_FAILURE )
     
 } catch (Exception e) {
-    TestCaseMain.logError(e, 'Test Cases/UC-13 Login_FailCases/UC-13 Login_Case03 - Copy')
+    TestCaseMain.logError(e, 'Test Cases/UC-07 View tuition fee')
 }

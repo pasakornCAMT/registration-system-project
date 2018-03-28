@@ -24,19 +24,19 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://registration-project-e9fc0.firebaseapp.com/login')
 
-WebUI.setText(findTestObject('View GPA of course/Page_NgApp/input_email'), 'teacher1@cmuTEA.ac.th')
+WebUI.setText(findTestObject('UC-12 View GPA of course_OR/Page_NgApp/input_email'), 'teacher1@cmuTEA.ac.th')
 
-WebUI.setText(findTestObject('View GPA of course/Page_NgApp/input_password'), '1')
+WebUI.setText(findTestObject('UC-12 View GPA of course_OR/Page_NgApp/input_password'), '1')
 
-WebUI.click(findTestObject('View GPA of course/Page_NgApp/button_Login'))
+WebUI.click(findTestObject('UC-12 View GPA of course_OR/Page_NgApp/button_Login'))
 
-WebUI.click(findTestObject('View GPA of course/Page_NgApp/a_Teacher Information'))
+WebUI.click(findTestObject('UC-12 View GPA of course_OR/Page_NgApp/a_Teacher Information'))
 
-WebUI.click(findTestObject('View GPA of course/Page_NgApp/button_Grading'))
+WebUI.click(findTestObject('UC-12 View GPA of course_OR/Page_NgApp/button_Grading'))
 
-WebUI.verifyElementPresent(findTestObject('View GPA of course/Page_NgApp/label_GPA of the course'), 0)
+WebUI.verifyElementPresent(findTestObject('UC-12 View GPA of course_OR/Page_NgApp/label_GPA of the course'), 0)
 
-WebUI.verifyElementPresent(findTestObject('View GPA of course/Page_NgApp/label_0'), 0)
+WebUI.verifyElementPresent(findTestObject('UC-12 View GPA of course_OR/Page_NgApp/label_0'), 0)
 
 WebUI.closeBrowser()
 
