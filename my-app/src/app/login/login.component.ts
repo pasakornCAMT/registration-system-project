@@ -27,28 +27,28 @@ export class LoginComponent implements OnInit {
       if(this.verifyTeacherLogin(email,password) == true){
         this.dataService.userStatus = 'login';
         this.dataService.userType = 'teacher';
-        this.router.navigate(['view-teacher']);
+        this.router.navigate(['course-list']);
       }else {
-        alert("Email or Password is invalid")
+        alert("e-mail or Password does not exist")
       }
     }else if(email.includes('@cmuSTU')){
       if(this.verifyStudentLogin(email,password) == true){
         this.dataService.userStatus = 'login';
         this.dataService.userType = 'student';
-        this.router.navigate(['view-student']);
+        this.router.navigate(['course-list']);
       }else {
-        alert("Email or Password is invalid")
+        alert("e-mail or Password does not exist")
       }
     }else if(email.includes('@cmuAD')){
       if(this.verifyAdminLogin(email,password) == true){
         this.dataService.userStatus = 'login';
         this.dataService.userType = 'admin';
-        this.router.navigate(['add-course']);
+        this.router.navigate(['course-list']);
       }else {
-        alert("Email or Password is invalid")
+        alert("e-mail or Password does not exist")
       }
     }else {
-      alert("Email or Password is invalid")
+      alert("e-mail or Password does not exist")
     }
   }
 
