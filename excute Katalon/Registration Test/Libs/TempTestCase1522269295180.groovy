@@ -13,13 +13,13 @@ DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.w
 DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.mobile.contribution.MobileDriverCleaner())
 
 
-RunConfiguration.setExecutionSettingFile('C:\\Users\\User\\AppData\\Local\\Temp\\Katalon\\Test Cases\\addcourse\\25610329_021212\\execution.properties')
+RunConfiguration.setExecutionSettingFile('/var/folders/f0/l4m8wfcd43qc7hgj13ztwjcc0000gn/T/Katalon/Test Cases/UC-08 View student GPA/20180329_033455/execution.properties')
 
 TestCaseMain.beforeStart()
 try {
     
-	    TestCaseMain.runTestCase('Test Cases/addcourse', new TestCaseBinding('Test Cases/addcourse', [:]), FailureHandling.STOP_ON_FAILURE )
+	    TestCaseMain.runTestCase('Test Cases/UC-08 View student GPA', new TestCaseBinding('Test Cases/UC-08 View student GPA', [:]), FailureHandling.STOP_ON_FAILURE )
     
 } catch (Exception e) {
-    TestCaseMain.logError(e, 'Test Cases/addcourse')
+    TestCaseMain.logError(e, 'Test Cases/UC-08 View student GPA')
 }
