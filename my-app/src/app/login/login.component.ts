@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../service/data.service';
 import {Router} from '@angular/router';
+import {ADMINS, STUDENTS, TEACHERS} from '../mocks';
+import {Teacher} from '../teacher/teacher';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +11,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   email:string;
+  password:string;
 
   constructor(private router:Router,public dataService:DataService) {
 
@@ -17,19 +20,67 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(email:string){
+  login(email:string, password:string){
     this.dataService.email = email;
+    this.dataService.password = password;
     if(email.includes('@cmuTEA')){
-      this.router.navigate(['view-teacher']);
-      this.dataService.userType = 'teacher';
+      if(this.verifyTeacherLogin(email,password) == true){
+        this.dataService.userStatus = 'login';
+        this.dataService.userType = 'teacher';
+        this.router.navigate(['view-teacher']);
+      }else {
+        alert("Email or Password is invalid")
+      }
     }else if(email.includes('@cmuSTU')){
-      this.dataService.userType = 'student';
-      this.router.navigate(['view-student']);
+      if(this.verifyStudentLogin(email,password) == true){
+        this.dataService.userStatus = 'login';
+        this.dataService.userType = 'student';
+        this.router.navigate(['view-student']);
+      }else {
+        alert("Email or Password is invalid")
+      }
     }else if(email.includes('@cmuAD')){
-      this.dataService.userType = 'admin';
-      this.router.navigate(['add-course']);
+      if(this.verifyAdminLogin(email,password) == true){
+        this.dataService.userStatus = 'login';
+        this.dataService.userType = 'admin';
+        this.router.navigate(['add-course']);
+      }else {
+        alert("Email or Password is invalid")
+      }
+    }else {
+      alert("Email or Password is invalid")
     }
-    this.dataService.userStatus = 'login';
+  }
+
+  verifyTeacherLogin(email:string, password:string){
+    let result = false;
+    for(let i = 0 ; i < TEACHERS.length ; i++){
+      if(email == TEACHERS[i].email && password == TEACHERS[i].password){
+        result = true;
+        break;
+      }
+    }
+    return result;
+  }
+  verifyStudentLogin(email:string, password:string){
+    let result = false;
+    for(let i = 0 ; i < STUDENTS.length ; i++){
+      if(email == STUDENTS[i].email && password == STUDENTS[i].password){
+        result = true;
+        break;
+      }
+    }
+    return result;
+  }
+  verifyAdminLogin(email:string, password:string){
+    let result = false;
+    for(let i = 0 ; i < ADMINS.length ; i++){
+      if(email == ADMINS[i].email && password == ADMINS[i].password){
+        result = true;
+        break;
+      }
+    }
+    return result;
   }
 
 }
