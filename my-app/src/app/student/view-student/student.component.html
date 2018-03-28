@@ -61,10 +61,10 @@
                   <td>{{course.name}}</td>
                   <td>{{course.credit}}</td>
                   <td>
-                    <button class="btn btn-outline-primary" type="button" (click)="showDetail(course.courseId)">View</button>
+                    <button class="btn btn-outline-primary" type="button" (click)="showDetail(course.courseId)" name="{{course.courseId}}">View</button>
                   </td>
                   <td>
-                    <button class="btn btn-outline-danger" type="button" (click)="removeCourse(i)">Remove</button>
+                    <button class="btn btn-outline-danger" type="button" (click)="removeCourse(i)" name="{{course.courseId}}">Remove</button>
                   </td>
                 </tr>
                 <tr>
