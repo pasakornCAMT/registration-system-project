@@ -18,12 +18,18 @@ export class LoginComponent implements OnInit {
   }
 
   login(email:string){
-    this.dataService.dataFromService = email;
+    this.dataService.email = email;
     if(email.includes('@cmuTEA')){
-      this.router.navigate(['view-teacher'])
+      this.router.navigate(['view-teacher']);
+      this.dataService.userType = 'teacher';
     }else if(email.includes('@cmuSTU')){
-      this.router.navigate(['view-student'])
+      this.dataService.userType = 'student';
+      this.router.navigate(['view-student']);
+    }else if(email.includes('@cmuAD')){
+      this.dataService.userType = 'admin';
+      this.router.navigate(['add-course']);
     }
-
+    this.dataService.userStatus = 'login';
   }
+
 }

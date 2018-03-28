@@ -21,7 +21,7 @@ export class StudentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data = this.dataService.dataFromService;
+    this.data = this.dataService.email;
     this.student = this.findStudentByEmail(this.data)
     this.generateCourseData();
     this.calculateCredit();
@@ -43,12 +43,12 @@ export class StudentComponent implements OnInit {
   removeCourse(index:number){
     let c = confirm("Are you sure to remove this course");
     if(c == true){
-      COURSES.splice(index,1);
+      this.courses.splice(index,1);
     }
 
   }
   showDetail(id:string){
-    this.dataService.dataFromService = id;
+    this.dataService.courseDetail = id;
     this.router.navigate(['view-course'])
   }
   findStudentByEmail(email:string){

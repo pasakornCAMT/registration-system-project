@@ -1,3 +1,6 @@
 export class DataService{
-  dataFromService;
+  userType = 'null';
+  email;
+  courseDetail;
+  userStatus = 'logout';
 }

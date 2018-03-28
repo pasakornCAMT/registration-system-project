@@ -18,7 +18,7 @@ export class ViewCourseComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data = this.dataService.dataFromService;
+    this.data = this.dataService.courseDetail;
     this.course = this.findCourseById(this.data);
     this.generateTeacherData();
   }

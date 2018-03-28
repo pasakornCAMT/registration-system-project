@@ -20,7 +20,7 @@ export class ListCourseComponent implements OnInit {
   }
 
   showDetail(id:string){
-    this.dataService.dataFromService = id;
+    this.dataService.courseDetail = id;
     this.router.navigate(['/view-course']);
   }
 

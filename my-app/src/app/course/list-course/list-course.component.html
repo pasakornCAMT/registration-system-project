@@ -17,7 +17,7 @@
                     <div class="input-group-append">
                       <button class="btn btn-outline-primary" type="button" (click)="showDetail(course.courseId)">View</button>
                     </div>
-                    <div class="input-group-append">
+                    <div *ngIf="dataService.userType == 'student'" class="input-group-append">
                       <button class="btn btn-outline-success" type="button" (click)="enrollCourse(course)">Enroll</button>
                     </div>
                   </div>

@@ -20,7 +20,7 @@ export class TeacherComponent implements OnInit {
 
 
   ngOnInit() {
-    this.data = this.dataService.dataFromService;
+    this.data = this.dataService.email;
     this.teacher = this.findTeacherByEmail(this.data);
     //this.courses=COURSES;
     this.generateCourseData();
@@ -29,7 +29,7 @@ export class TeacherComponent implements OnInit {
     this.router.navigate(['/grading']);
   }
   showDetail(id:string){
-    this.dataService.dataFromService = id;
+    this.dataService.courseDetail = id;
     this.router.navigate(['view-course'])
   }
   findTeacherByEmail(email:string){

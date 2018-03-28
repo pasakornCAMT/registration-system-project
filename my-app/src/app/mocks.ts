@@ -1,6 +1,7 @@
 import {Course} from "./course/course";
 import {Teacher} from "./teacher/teacher";
 import {Student} from './student/student';
+import {Admin} from './admin/admin';
 
 export const COURSES: Course[]=[
   {
@@ -108,5 +109,12 @@ export const STUDENTS: Student[]=[
     ],
     'email':'student3@cmuSTU.ac.th',
     'password':'3'
+  }
+];
+
+export const ADMINS:Admin[]=[
+  {
+    'email':'admin1@cmuAD.ac.th',
+    'password':'1'
   }
 ];
