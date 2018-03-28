@@ -26,4 +26,4 @@ nbdist/
 out/production/resources/application.properties
 out/production/classes/com/example/registrationproject/RegistrationProjectApplication.class
 my-app/package-lock.json
-*.groovy
+
