@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>button_View</name>
+   <name>button_Remove</name>
    <tag></tag>
-   <elementGuidId>d09a0ee0-d077-4c9e-b274-cb9a182d355e</elementGuidId>
+   <elementGuidId>7b8e2e47-f0bd-4401-8aa2-5d33e596d3db</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
-      <value>btn btn-outline-primary</value>
+      <value>btn btn-outline-danger</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -30,15 +30,22 @@
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>954441</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>View</value>
+      <value>Remove</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html[1]/body[1]/app-root[1]/app-list-course[1]/div[@class=&quot;container&quot;]/form[@class=&quot;ng-untouched ng-pristine ng-valid&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;row&quot;]/div[@class=&quot;col-md-8 mx-auto mt-5&quot;]/div[@class=&quot;card&quot;]/div[@class=&quot;card-body&quot;]/div[1]/div[@class=&quot;form-group row&quot;]/div[@class=&quot;col-sm-9&quot;]/div[@class=&quot;input-group mb-3&quot;]/div[@class=&quot;input-group-append&quot;]/button[@class=&quot;btn btn-outline-primary&quot;]</value>
+      <value>/html[1]/body[1]/app-root[1]/app-student[1]/div[@class=&quot;container&quot;]/form[@class=&quot;ng-untouched ng-pristine ng-valid&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;row&quot;]/div[@class=&quot;col-md-8 mx-auto mt-5&quot;]/div[@class=&quot;card&quot;]/div[@class=&quot;card-body&quot;]/table[@class=&quot;table&quot;]/tbody[1]/tr[3]/td[5]/button[@class=&quot;btn btn-outline-danger&quot;]</value>
    </webElementProperties>
 </WebElementEntity>
