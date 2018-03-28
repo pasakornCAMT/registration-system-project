@@ -24,13 +24,17 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://registration-project-e9fc0.firebaseapp.com/login')
 
-WebUI.click(findTestObject('UC-04-01- View course details_OR/Page_NgApp/a_Course Lists'))
+WebUI.setText(findTestObject('UC-08 View student GPA_OR/input_email'), 'student1@cmuSTU.ac.th')
 
-WebUI.click(findTestObject('UC-04-01- View course details_OR/Page_NgApp/label_021251'))
+WebUI.setText(findTestObject('UC-08 View student GPA_OR/input_password'), '1')
 
-WebUI.click(findTestObject('UC-04-01- View course details_OR/Page_NgApp/button_View'))
+WebUI.click(findTestObject('UC-08 View student GPA_OR/button_Login'))
 
-WebUI.verifyElementText(findTestObject('UC-04-01- View course details_OR/Page_NgApp/label_021251'), '021251')
+WebUI.click(findTestObject('UC-08 View student GPA_OR/a_Student Information'))
+
+WebUI.click(findTestObject('UC-08 View student GPA_OR/button_View GPA'))
+
+WebUI.verifyElementPresent(findTestObject('UC-08 View student GPA_OR/td_4.00'), 0)
 
 WebUI.closeBrowser()
 
