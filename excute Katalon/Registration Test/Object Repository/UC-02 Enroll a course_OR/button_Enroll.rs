@@ -3,7 +3,7 @@
    <description></description>
    <name>button_Enroll</name>
    <tag></tag>
-   <elementGuidId>29766f5e-44c6-4e1c-9333-19119341f5af</elementGuidId>
+   <elementGuidId>ea23514c-78a3-4b05-906e-a24ae8507e52</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -26,6 +26,13 @@
       <name>type</name>
       <type>Main</type>
       <value>button</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>954441</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

@@ -4,5 +4,5 @@
    <name>Registration Test</name>
    <tag></tag>
    <UUID>47c7a2af-fc5f-45f0-846e-f8ec946ad283</UUID>
-   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeout>0</pageLoadTimeout>
 </Project>

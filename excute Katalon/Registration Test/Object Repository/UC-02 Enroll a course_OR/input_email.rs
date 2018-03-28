@@ -3,7 +3,7 @@
    <description></description>
    <name>input_email</name>
    <tag></tag>
-   <elementGuidId>a3f25af7-2c6b-4d53-bc3f-da190ae96552</elementGuidId>
+   <elementGuidId>113983ec-1aed-4465-b766-5601f9466f0e</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
