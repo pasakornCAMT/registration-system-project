@@ -24,13 +24,19 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://registration-project-e9fc0.firebaseapp.com/login')
 
-WebUI.click(findTestObject('UC-04-01- View course details/Page_NgApp/a_Course Lists'))
+WebUI.setText(findTestObject('UC-07 View tuition fee_OR/input_email'), 'st')
 
-WebUI.click(findTestObject('UC-04-01- View course details/Page_NgApp/label_021251'))
+WebUI.setText(findTestObject('UC-07 View tuition fee_OR/input_email'), 'student1@cmuSTU.ac.th')
 
-WebUI.click(findTestObject('UC-04-01- View course details/Page_NgApp/button_View'))
+WebUI.setText(findTestObject('UC-07 View tuition fee_OR/input_password'), '1')
 
-WebUI.verifyElementText(findTestObject('UC-04-01- View course details/Page_NgApp/label_021251'), '021251')
+WebUI.click(findTestObject('UC-07 View tuition fee_OR/button_Login'))
+
+WebUI.click(findTestObject('UC-07 View tuition fee_OR/a_Student Information'))
+
+WebUI.verifyElementPresent(findTestObject('UC-07 View tuition fee_OR/label_Tuition fee'), 0)
+
+WebUI.click(findTestObject('UC-07 View tuition fee_OR/label_180 THB'))
 
 WebUI.closeBrowser()
 

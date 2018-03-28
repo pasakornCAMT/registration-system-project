@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>UC-04-01- View course details</name>
+   <name>UC-06 Remove a course</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>d1b8dcbb-7b0c-4ac0-98df-14c540141064</testCaseGuid>
+   <testCaseGuid>4d3b89c4-12b5-4287-92c1-9dd51c1d9e1c</testCaseGuid>
 </TestCaseEntity>
