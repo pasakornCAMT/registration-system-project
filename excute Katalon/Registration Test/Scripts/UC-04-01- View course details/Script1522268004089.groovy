@@ -24,13 +24,13 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://registration-project-e9fc0.firebaseapp.com/login')
 
-WebUI.click(findTestObject('UC-04-01- View course details/Page_NgApp/a_Course Lists'))
+WebUI.click(findTestObject('UC-04-01- View course details_OR/Page_NgApp/a_Course Lists'))
 
-WebUI.click(findTestObject('UC-04-01- View course details/Page_NgApp/label_021251'))
+WebUI.click(findTestObject('UC-04-01- View course details_OR/Page_NgApp/label_021251'))
 
-WebUI.click(findTestObject('UC-04-01- View course details/Page_NgApp/button_View'))
+WebUI.click(findTestObject('UC-04-01- View course details_OR/Page_NgApp/button_View'))
 
-WebUI.verifyElementText(findTestObject('UC-04-01- View course details/Page_NgApp/label_021251'), '021251')
+WebUI.verifyElementText(findTestObject('UC-04-01- View course details_OR/Page_NgApp/label_021251'), '021251')
 
 WebUI.closeBrowser()
 
