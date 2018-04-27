@@ -6,20 +6,4 @@ describe('ViewStudentGpaComponent', () => {
   let component: ViewStudentGpaComponent;
   let fixture: ComponentFixture<ViewStudentGpaComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ViewStudentGpaComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ViewStudentGpaComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
