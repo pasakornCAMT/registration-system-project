@@ -32,7 +32,7 @@ describe('ListCourseComponent', () => {
     component = TestBed.get(ListCourseComponent);
     student = TestBed.get(Student);
     course = TestBed.get(Course);
-	service = TestBed.get(DataService);
+	  service = TestBed.get(DataService);
 
   });
 
