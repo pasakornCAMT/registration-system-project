@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 import {Student} from '../../student/student';
 import {COURSES, STUDENTS} from '../../mocks';
 import {Course} from '../course';
+import {StudentComponent} from '../../student/view-student/student.component';
 
 
 describe('ListCourseComponent', () => {
@@ -21,12 +22,16 @@ describe('ListCourseComponent', () => {
     TestBed.configureTestingModule({
       providers: [
         ListCourseComponent,
+        Student,
+        Course,
         {provide: DataService, useValue: service},
         {provide: Router, useValue: router}
       ]
     });
     // Inject
     component = TestBed.get(ListCourseComponent);
+    student = TestBed.get(Student);
+    course = TestBed.get(Course);
 
   });
 
@@ -67,12 +72,13 @@ describe('ListCourseComponent', () => {
   });
 
   it('should push course object into student when click enrolled course',()=>{
-/*    //Arrange
+    //Arrange
+    component.student = STUDENTS[0];
     course = COURSES[0];
     //Act
-    component.enrollCourse(course)
+    component.enrollCourse(course);
     //Assert
-    expect(component.student.enrolled_course).toContain(course);*/
+    expect(component.student.enrolled_course).toContain(course.courseId);
   });
 
 });
