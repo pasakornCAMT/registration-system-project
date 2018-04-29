@@ -28,9 +28,10 @@ describe('ListCourseComponent', () => {
     // Inject
     component = TestBed.get(ListCourseComponent);
 
+
   });
 
-  it('should return first student object by student email', () => {
+  it('findStudentByEmail(): should return first student object by student email', () => {
     //Arrange
     studentEmail = 'student1@cmuSTU.ac.th';
     //Act
@@ -39,7 +40,7 @@ describe('ListCourseComponent', () => {
     expect(student).toEqual(STUDENTS[0]);
   });
 
-  it('should return second student object by student email', () => {
+  it('findStudentByEmail(): should return second student object by student email', () => {
     //Arrange
     studentEmail = 'student2@cmuSTU.ac.th';
     //Act
@@ -48,7 +49,7 @@ describe('ListCourseComponent', () => {
     expect(student).toEqual(STUDENTS[1]);
   });
 
-  it('should return second student object by student email', () => {
+  it('findStudentByEmail(): should return third student object by student email', () => {
     //Arrange
     studentEmail = 'student3@cmuSTU.ac.th';
     //Act
@@ -57,7 +58,7 @@ describe('ListCourseComponent', () => {
     expect(student).toEqual(STUDENTS[2]);
   });
 
-  it('should display courses as same as COURSES in mock.ts',()=>{
+  it('ngOnInit(): should display courses as same as COURSES in mock.ts',()=>{
     //Arrange
 
     //Act
@@ -66,13 +67,13 @@ describe('ListCourseComponent', () => {
     expect(component.courses).toEqual(COURSES);
   });
 
-  it('should push course object into student when click enrolled course',()=>{
-/*    //Arrange
-    course = COURSES[0];
-    //Act
-    component.enrollCourse(course)
-    //Assert
-    expect(component.student.enrolled_course).toContain(course);*/
-  });
+  // it('enrollCourse(): should push course object into student when click enrolled course',()=>{
+  //   //Arrange
+  //   course = COURSES[0];
+  //   //Act
+  //   component.enrollCourse(course)
+  //   //Assert
+  //   expect(component.student.enrolled_course).toContain(course);
+  // });
 
 });
