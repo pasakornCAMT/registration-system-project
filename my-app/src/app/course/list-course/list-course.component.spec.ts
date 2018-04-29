@@ -6,17 +6,17 @@ import {Router} from '@angular/router';
 import {Student} from '../../student/student';
 import {COURSES, STUDENTS} from '../../mocks';
 import {Course} from '../course';
-import {StudentComponent} from '../../student/view-student/student.component';
 
 
 describe('ListCourseComponent', () => {
   let component;
   const router = jasmine.createSpyObj('Router',['navigate']);
-  const service = jasmine.createSpyObj('DataService',['getService']);
+  let service = jasmine.createSpyObj('DataService',['getService']);
   let fixture: ComponentFixture<ListCourseComponent>;
   let studentEmail: string;
   let student: Student;
   let course: Course;
+  let courseId: string;
 
   beforeEach(()=>{
     TestBed.configureTestingModule({
@@ -72,8 +72,7 @@ describe('ListCourseComponent', () => {
     expect(component.courses).toEqual(COURSES);
   });
 
-
-  it('should push course object into student when click enrolled course',()=>{
+  it('enrollCourse(course:Course): should push course object into student when click enrolled course',()=>{
     //Arrange
     component.student = STUDENTS[0];
     course = COURSES[0];
