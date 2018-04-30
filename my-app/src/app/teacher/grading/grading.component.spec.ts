@@ -7,6 +7,7 @@ import {Course} from "../../course/course";
 import {TeacherComponent} from "../view-teacher/teacher.component";
 import {DataService} from "../../service/data.service";
 import {Router} from "@angular/router";
+import {TargetLocator} from "selenium-webdriver";
 
 describe('GradingComponent', () => {
   let component: GradingComponent;
@@ -43,60 +44,59 @@ describe('GradingComponent', () => {
   });
 
   //onClickGrade01(event: Event)----------------------------------------------------------------------------------------
-  it('onClickGrade01(event: Event): should show summary number of grades and GPA of course by click on first student',()=>{
-    //Arrange
-    component.ngOnInit();
-    (event.target as HTMLSelectElement).value= 'A';
-    //Act
-      component.onClickGrade01(event);
-    //Assert
-    expect(component.gradeA).toEqual(1);
-    expect(component.gpaOfCourse).toEqual(4);
-  });
+  // it('onClickGrade01(event: Event): should show summary number of grades and GPA of course by click on first student',()=>{
+  //   //Arrange
+  //   component.ngOnInit();
+  //   (event.target as HTMLSelectElement).value= 'A';
+  //   //Act
+  //     component.onClickGrade01(event);
+  //   //Assert
+  //   expect(component.gradeA).toEqual(1);
+  //   expect(component.gpaOfCourse).toEqual(4);
+  // });
 
   //onClickGrade02(event: Event)----------------------------------------------------------------------------------------
-  it('onClickGrade02(event: Event): should show summary number of grades and GPA of course by click on second student',()=>{
-    //Arrange
-    component.ngOnInit();
-    (event.target as HTMLSelectElement).value= 'B';
-    //Act
-    component.onClickGrade02(event);
-    //Assert
-    expect(component.gradeB).toEqual(1);
-    expect(component.gpaOfCourse).toEqual(3);
-  });
+  // it('onClickGrade02(event: Event): should show summary number of grades and GPA of course by click on second student',()=>{
+  //   //Arrange
+  //   component.ngOnInit();
+  //   (event.target as HTMLSelectElement).value= 'B';
+  //   //Act
+  //   component.onClickGrade02(event);
+  //   //Assert
+  //   expect(component.gradeB).toEqual(1);
+  //   expect(component.gpaOfCourse).toEqual(3);
+  // });
 
   //onClickGrade03(event: Event)----------------------------------------------------------------------------------------
-  it('onClickGrade03(event: Event): should show summary number of grades and GPA of course by click on third student',()=>{
-    //Arrange
-    component.ngOnInit();
-    (event.target as HTMLSelectElement).value= 'C';
-    //Act
-    component.onClickGrade03(event);
-    //Assert
-    expect(component.gradeC).toEqual(1);
-    expect(component.gpaOfCourse).toEqual(2);
-  });
+  // it('onClickGrade03(event: Event): should show summary number of grades and GPA of course by click on third student',()=>{
+  //   //Arrange
+  //   component.ngOnInit();
+  //   (event.target as HTMLSelectElement).value= 'C';
+  //   //Act
+  //   component.onClickGrade03(event);
+  //   //Assert
+  //   expect(component.gradeC).toEqual(1);
+  //   expect(component.gpaOfCourse).toEqual(2);
+  // });
 
   //onClickGradeXX(event: Event)---------------------------------------------------------------------------------------------
-  it('onClickGradeXX(event: Event): Combine 3 selected choices together by all of choices are selected.',()=>{
-    component.ngOnInit();
-
-    (event.target as HTMLSelectElement).value= 'A';
-    component.onClickGrade01(event);
-    (event.target as HTMLSelectElement).value= 'A';
-    component.onClickGrade02(event);
-    (event.target as HTMLSelectElement).value= 'B';
-    component.onClickGrade03(event);
-    expect(component.gradeA).toEqual(2);
-    expect(component.gradeB).toEqual(1);
-    expect(component.gpaOfCourse).toEqual(3.6666666666666665);
-
-  });
+  // it('onClickGradeXX(event: Event): Combine 3 selected choices together by all of choices are selected.',()=>{
+  //   component.ngOnInit();
+  //
+  //   (event.target as HTMLSelectElement).value= 'A';
+  //   component.onClickGrade01(event);
+  //   (event.target as HTMLSelectElement).value= 'A';
+  //   component.onClickGrade02(event);
+  //   (event.target as HTMLSelectElement).value= 'B';
+  //   component.onClickGrade03(event);
+  //   expect(component.gradeA).toEqual(2);
+  //   expect(component.gradeB).toEqual(1);
+  //   expect(component.gpaOfCourse).toEqual(3.6666666666666665);
+  //
+  // });
 
   // it('onClickGradeXX(event: Event): Combine 3 selected choices together by if values of some choices are changed.',()=>{
   //   component.ngOnInit();
-  //
   //   (event.target as HTMLSelectElement).value= 'A';
   //   component.onClickGrade01(event);
   //   (event.target as HTMLSelectElement).value= 'A';

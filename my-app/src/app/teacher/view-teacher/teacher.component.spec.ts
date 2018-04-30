@@ -113,7 +113,7 @@ describe('TeacherComponent', () => {
   });
 
   //showGrading()--------------------------------------------------------------------------------------------------------
-  it('showGrading(): should show grading page',()=>{
+  it('showGrading(): should use grading path name',()=>{
     //Arrange
     pathName='/grading';
     router.navigate([pathName]);
