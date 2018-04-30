@@ -57,4 +57,26 @@ describe('LoginComponent', () => {
     //Assert
     expect(result).toBe(true);
   });
+
+  it('verifyTeacherLogin(email:string, password:string) should return false if first teacher account is incorrect',()=>{
+    //Arrange
+    email = 'teacher1@cmuTEA.ac.th';
+    password = '2';
+    let result;
+    //Act
+    result = component.verifyTeacherLogin(email,password);
+    //Assert
+    expect(result).toBe(false);
+  });
+
+  it('verifyTeacherLogin(email:string, password:string) should return false if second teacher account is incorrect',()=>{
+    //Arrange
+    email = 'teacher2@cmuTEA.ac.th';
+    password = '1';
+    let result;
+    //Act
+    result = component.verifyTeacherLogin(email,password);
+    //Assert
+    expect(result).toBe(false);
+  });
 });
