@@ -1,8 +1,9 @@
-mport { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
 
 import { MenuComponent } from './menu.component';
 import {DataService} from "../service/data.service";
 import {Router} from "@angular/router";
+import {ComponentFixture, TestBed} from "@angular/core/testing";
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
