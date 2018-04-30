@@ -63,14 +63,14 @@ describe('ListCourseComponent', () => {
     expect(student).toEqual(STUDENTS[2]);
   });
 
-  it('ngOnInit(): should display courses as same as COURSES in mock.ts',()=>{
-    //Arrange
-
-    //Act
-    component.ngOnInit();
-    //Assert
-    expect(component.courses).toEqual(COURSES);
-  });
+  // it('ngOnInit(): should display courses as same as COURSES in mock.ts',()=>{
+  //   //Arrange
+  //
+  //   //Act
+  //   component.ngOnInit();
+  //   //Assert
+  //   expect(component.courses).toEqual(COURSES);
+  // });
 
 
   it('should push course object into student when click enrolled course',()=>{
