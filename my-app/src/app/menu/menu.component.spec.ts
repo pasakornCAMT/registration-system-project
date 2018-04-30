@@ -23,5 +23,22 @@ describe('MenuComponent', () => {
     component = TestBed.get(MenuComponent);
     service= TestBed.get(DataService);
   });
-  
+   it('login(): should use login path name',()=>{
+    //Arrange
+    pathName='/login';
+    router.navigate([pathName]);
+    //Act
+    component.login();
+    //Assert
+    expect(pathName).toBe('/login');
+  });
+
+  it('logout(): should set user type to null',()=>{
+    //Arrange
+
+    //Act
+    component.logout();
+    //Assert
+    expect(service.userType).toBe('null');
+  });
  });
