@@ -82,8 +82,6 @@ export class GradingComponent implements OnInit {
   // }
 
 
-
-
   onClickGrade01(event: Event) {
     if (this.previousGrade01!==null) {
       if (this.previousGrade01 !== (event.target as HTMLSelectElement).value) {

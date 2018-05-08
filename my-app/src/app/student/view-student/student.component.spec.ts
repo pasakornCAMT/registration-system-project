@@ -36,7 +36,7 @@ describe('StudentComponent', () => {
     //Arrange
     studentEmail = 'student1@cmuSTU.ac.th';
     //Act
-    student = component.findStudentByEmail(studentEmail);
+    student = StudentComponent.findStudentByEmail(studentEmail);
     //Assert
     expect(student).toEqual(STUDENTS[0]);
   });
