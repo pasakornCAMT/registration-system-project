@@ -233,6 +233,6 @@ export class GradingComponent implements OnInit {
   gradeChanged(event: Event,gradeIndex: number, student:Student){
     student.grade[gradeIndex] = (event.target as HTMLSelectElement).value;
     this.studentDataService.updateCourse(student);
-    //this.students.splice(this.students.indexOf(student),1);
+    this.students.splice(this.students.indexOf(student),1);
   }
 }
