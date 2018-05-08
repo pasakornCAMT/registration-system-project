@@ -28,7 +28,7 @@ WebUI.setText(findTestObject('UC-07 View tuition fee_OR/input_email'), 'st')
 
 WebUI.setText(findTestObject('UC-07 View tuition fee_OR/input_email'), 'student1@cmuSTU.ac.th')
 
-WebUI.setText(findTestObject('UC-07 View tuition fee_OR/input_password'), '1')
+WebUI.setText(findTestObject('UC-07 View tuition fee_OR/input_password'), '123456')
 
 WebUI.click(findTestObject('UC-07 View tuition fee_OR/button_Login'))
 

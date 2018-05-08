@@ -26,7 +26,7 @@ WebUI.navigateToUrl('https://registration-project-e9fc0.firebaseapp.com/login')
 
 WebUI.setText(findTestObject('UC-13 Login_FailCases_OR/input_email'), 'admin1@cmu.AD.ac.th')
 
-WebUI.setText(findTestObject('UC-13 Login_FailCases_OR/input_password'), 'stu1')
+WebUI.setText(findTestObject('UC-13 Login_FailCases_OR/input_password'), 'stu')
 
 WebUI.click(findTestObject('UC-13 Login_FailCases_OR/button_Login'))
 
