@@ -61,11 +61,10 @@ export class LoginComponent implements OnInit {
   }*/
 
   login(emailInput:string,passwordInput:string){
-    let email = firebase.auth().currentUser.email;
-    console.log(email);
-      //'student1@cmuSTU.ac.th';
     this.authService.login(emailInput, passwordInput).then((data)=>{
       console.log(data);
+      let email = firebase.auth().currentUser.email;
+      console.log(email);
       this.router.navigate(['course-list']);
       this.authService.authenticated = true;
       if(email.includes("@cmustu")){
