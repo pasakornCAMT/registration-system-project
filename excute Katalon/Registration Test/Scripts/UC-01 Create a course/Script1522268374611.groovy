@@ -28,7 +28,7 @@ WebUI.setText(findTestObject('UC-01 Create a course_OR/input_email'), 'admin1@cm
 
 WebUI.click(findTestObject('UC-01 Create a course_OR/div_Email'))
 
-WebUI.setText(findTestObject('UC-01 Create a course_OR/input_password'), '1')
+WebUI.setText(findTestObject('UC-01 Create a course_OR/input_password'), '123456')
 
 WebUI.click(findTestObject('UC-01 Create a course_OR/button_Login'))
 

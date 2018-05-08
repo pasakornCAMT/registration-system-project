@@ -26,7 +26,7 @@ WebUI.navigateToUrl('https://registration-project-e9fc0.firebaseapp.com/login')
 
 WebUI.setText(findTestObject('UC-05 View enrolled course list_OR/input_email'), 'student3@cmuSTU.ac.th')
 
-WebUI.setText(findTestObject('UC-05 View enrolled course list_OR/input_password'), '3')
+WebUI.setText(findTestObject('UC-05 View enrolled course list_OR/input_password'), '123456')
 
 WebUI.click(findTestObject('UC-05 View enrolled course list_OR/button_Login'))
 
