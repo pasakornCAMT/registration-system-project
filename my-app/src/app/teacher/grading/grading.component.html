@@ -16,7 +16,7 @@
                     <div class="input-group mb-3">
                       <label class="form-control ">{{student.name}}&nbsp;{{student.surname}}</label>
                       <select class="form-control col-sm-3 " id="select1"
-                              (change)="onClickGrade01($event)" (change)="gradeChanged($event,student.enrolledCourse.indexOf(course.courseId),student)"
+                              (change)="onClickGrade($event)" (change)="gradeChanged($event,student.enrolledCourse.indexOf(course.courseId),student)"
                               value="{{student.grade[student.enrolledCourse.indexOf(course.courseId)]}}">
                         <option value="A">A</option>
                         <option value="B">B</option>
