@@ -26,7 +26,7 @@ WebUI.navigateToUrl('https://registration-project-e9fc0.firebaseapp.com/login')
 
 WebUI.setText(findTestObject('UC-12 View GPA of course_OR/Page_NgApp/input_email'), 'teacher1@cmuTEA.ac.th')
 
-WebUI.setText(findTestObject('UC-12 View GPA of course_OR/Page_NgApp/input_password'), '1')
+WebUI.setText(findTestObject('UC-12 View GPA of course_OR/Page_NgApp/input_password'), '123456')
 
 WebUI.click(findTestObject('UC-12 View GPA of course_OR/Page_NgApp/button_Login'))
 
