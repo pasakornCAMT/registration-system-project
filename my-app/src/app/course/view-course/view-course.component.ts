@@ -3,6 +3,10 @@ import {Course} from "../course";
 import {Teacher} from "../../teacher/teacher";
 import {COURSES, TEACHERS} from "../../mocks";
 import {DataService} from '../../service/data.service';
+import {CourseDataFirestoreService} from '../../service/course-data-firestore.service';
+import {ActivatedRoute, Params} from '@angular/router';
+import 'rxjs/add/operator/switchMap';
+import {TeacherDataFirestoreService} from '../../service/teacher-data-firestore.service';
 
 @Component({
   selector: 'app-view-course',
@@ -14,13 +18,23 @@ export class ViewCourseComponent implements OnInit {
   teachers:Teacher[]=[];
   data:string;
 
-  constructor(public dataService:DataService) {
+  constructor(public dataService:DataService,
+              public courseDataService: CourseDataFirestoreService,
+              public route: ActivatedRoute,
+              public teacherDataService: TeacherDataFirestoreService) {
   }
 
   ngOnInit() {
-    this.data = this.dataService.courseDetail;
+/*    this.data = this.dataService.courseDetail;
     this.course = this.findCourseById(this.data);
-    this.generateTeacherData();
+    this.generateTeacherData();*/
+    this.route.params
+      .switchMap((params:Params)=> this.courseDataService.getCourse(params['id']))
+      .subscribe(course=>{
+        this.course = course;
+        this.generateTeacherData();
+      });
+
   }
 
   findCourseById(id:string){
@@ -29,8 +43,16 @@ export class ViewCourseComponent implements OnInit {
     return course
   }
   generateTeacherData(){
-    for(let i = 0 ; i < this.course.teaching_course.length ; i++){
+    /*for(let i = 0 ; i < this.course.teaching_course.length ; i++){
       this.teachers.push(TEACHERS.find(x => x.teacherId == this.course.teaching_course[i]));
+    }*/
+    let teacher: Teacher;
+    for(let i = 0 ; i < this.course.teachers.length ; i++){
+      this.teacherDataService.getTeacher(this.course.teachers[i])
+        .subscribe(t=>{
+          teacher = t;
+          this.teachers.push(teacher);
+        });
     }
   }
 }

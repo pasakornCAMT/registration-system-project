@@ -8,7 +8,7 @@ const courseRoute: Routes =
   [
     {path: 'add-course', component: AddCourseComponent},
     {path: 'course-list', component: ListCourseComponent},
-    {path: 'view-course', component: ViewCourseComponent},
+    {path: 'view-course/:id', component: ViewCourseComponent},
     {
       path: '',
       redirectTo: '/login',

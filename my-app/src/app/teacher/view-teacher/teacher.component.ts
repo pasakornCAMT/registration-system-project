@@ -4,6 +4,8 @@ import {Course} from '../../course/course';
 import {COURSES, TEACHERS} from '../../mocks';
 import {DataService} from '../../service/data.service';
 import {Teacher} from '../teacher';
+import {AuthenticationService} from '../../service/authentication.service';
+import {CourseDataFirestoreService} from '../../service/course-data-firestore.service';
 
 @Component({
   selector: 'app-teacher',
@@ -15,31 +17,32 @@ export class TeacherComponent implements OnInit {
   teacher:Teacher;
   data:string;
 
-  constructor(private router:Router, public dataService:DataService) {
+  constructor(private router:Router,
+              public dataService:DataService,
+              public authService: AuthenticationService,
+              public courseDataService: CourseDataFirestoreService) {
   }
 
 
   ngOnInit() {
-    this.data = this.dataService.email;
-    this.teacher = this.findTeacherByEmail(this.data);
-    //this.courses=COURSES;
+    this.teacher = this.authService.teacher;
     this.generateCourseData();
   }
-  showGrading(){
-    this.router.navigate(['/grading']);
+  showGrading(id:string){
+    this.router.navigate(['/grading',id]);
   }
   showDetail(id:string){
-    this.dataService.courseDetail = id;
-    this.router.navigate(['view-course'])
-  }
-  findTeacherByEmail(email:string){
-    let teacher;
-    teacher = TEACHERS.find(x => x.email == email);
-    return teacher
+    //this.dataService.courseDetail = id;
+    this.router.navigate(['view-course',id])
   }
   generateCourseData(){
-    for(let i = 0 ; i < this.teacher.teaching_course.length ; i++){
-      this.courses.push(COURSES.find(x => x.courseId == this.teacher.teaching_course[i]));
+    let course: Course;
+    for(let i = 0 ; i < this.teacher.teachingCourse.length ; i++){
+      this.courseDataService.getCourse(this.teacher.teachingCourse[i])
+        .subscribe(c=>{
+          course = c;
+          this.courses.push(course);
+        });
     }
   }
 

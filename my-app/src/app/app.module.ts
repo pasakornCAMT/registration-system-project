@@ -16,7 +16,14 @@ import { GradingComponent } from './teacher/grading/grading.component';
 import { ViewStudentGpaComponent } from './student/view-student-gpa/view-student-gpa.component';
 import {FormsModule} from '@angular/forms';
 import {DataService} from './service/data.service';
-
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import {CourseDataFirestoreService} from './service/course-data-firestore.service';
+import {TeacherDataFirestoreService} from './service/teacher-data-firestore.service';
+import {AuthenticationService} from './service/authentication.service';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import {StudentDataFirestoreService} from './service/student-data-firestore.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +39,22 @@ import {DataService} from './service/data.service';
     ViewStudentGpaComponent,
   ],
   imports: [
-    BrowserModule,CourseRoutingModule,StudentRoutingModule,TeacherRoutingModule,AppRoutingModule,FormsModule
+    BrowserModule,
+    CourseRoutingModule,
+    StudentRoutingModule,
+    TeacherRoutingModule,
+    AppRoutingModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
-  providers: [DataService],
+  providers: [DataService,
+  CourseDataFirestoreService,
+  TeacherDataFirestoreService,
+  AuthenticationService,
+  StudentDataFirestoreService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

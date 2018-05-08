@@ -5,7 +5,7 @@ import {Admin} from './admin/admin';
 
 export const COURSES: Course[]=[
   {
-    'id':1,
+    /*'id':'1',
     'courseId':'021251',
     'name':'Mathematics',
     'seat':30,
@@ -17,10 +17,10 @@ export const COURSES: Course[]=[
     ],
     'student_course':[
       '582115040','582115999'
-    ]
+    ]*/
   },
   {
-    'id':2,
+   /* 'id':'2',
     'courseId':'953322',
     'name':'Software construct',
     'seat':50,
@@ -32,10 +32,10 @@ export const COURSES: Course[]=[
     ],
     'student_course':[
       '582115040','582115999','582115000'
-    ]
+    ]*/
   },
   {
-    'id':3,
+/*    'id':'3',
     'courseId':'954441',
     'name':'Android Application',
     'seat':30,
@@ -47,12 +47,12 @@ export const COURSES: Course[]=[
     ],
     'student_course':[
       '582115040'
-    ]
+    ]*/
   }
 ];
 
 export const TEACHERS: Teacher[]=[
-  {
+  /*{
     'id':1,
     'teacherId':'001',
     'name':'Yingluck',
@@ -73,11 +73,11 @@ export const TEACHERS: Teacher[]=[
     'teaching_course':[
       '021251','954441'
     ]
-  }
+  }*/
 ];
 
 export const STUDENTS: Student[]=[
-  {
+  /*{
     'id':1,
     'studentId':'582115040',
     'name':'Pasakorn',
@@ -109,7 +109,7 @@ export const STUDENTS: Student[]=[
     ],
     'email':'student3@cmuSTU.ac.th',
     'password':'3'
-  }
+  }*/
 ];
 
 export const ADMINS:Admin[]=[

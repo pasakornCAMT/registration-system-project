@@ -4,6 +4,10 @@ import {COURSES, STUDENTS} from '../../mocks';
 import {Router} from '@angular/router';
 import {DataService} from '../../service/data.service';
 import {Student} from '../student';
+import {AuthenticationService} from '../../service/authentication.service';
+import {Teacher} from '../../teacher/teacher';
+import {CourseDataFirestoreService} from '../../service/course-data-firestore.service';
+import {StudentDataFirestoreService} from '../../service/student-data-firestore.service';
 
 @Component({
   selector: 'app-student',
@@ -16,15 +20,18 @@ export class StudentComponent implements OnInit {
   totalFee:number;
   student:Student;
   data:string;
-  constructor(private router:Router,public dataService:DataService) {
+  constructor(private router:Router,
+              public dataService:DataService,
+              public authService: AuthenticationService,
+              public courseDataService: CourseDataFirestoreService,
+              public studentDataService: StudentDataFirestoreService) {
 
   }
 
   ngOnInit() {
-    this.data = this.dataService.email;
-    this.student = this.findStudentByEmail(this.data)
+    this.student = this.authService.student;
+    console.log(this.student);
     this.generateCourseData();
-    this.calculateCredit();
   }
 
   calculateCredit() {
@@ -44,21 +51,26 @@ export class StudentComponent implements OnInit {
     let c = confirm("Are you sure to remove this course");
     if(c == true){
       this.courses.splice(index,1);
+      this.student.enrolledCourse.splice(index,1);
+      this.studentDataService.updateCourse(this.student);
+      this.router.navigate(['view-student']);
     }
+
 
   }
   showDetail(id:string){
-    this.dataService.courseDetail = id;
-    this.router.navigate(['view-course'])
-  }
-  findStudentByEmail(email:string){
-    let student;
-    student = STUDENTS.find(x => x.email == email);
-    return student
+    //this.dataService.courseDetail = id;
+    this.router.navigate(['view-course',id])
   }
   generateCourseData(){
-    for(let i = 0 ; i < this.student.enrolled_course.length ; i++){
-      this.courses.push(COURSES.find(x => x.courseId == this.student.enrolled_course[i]));
+    let course: Course;
+    for(let i = 0 ; i < this.student.enrolledCourse.length ; i++){
+      this.courseDataService.getCourse(this.student.enrolledCourse[i])
+        .subscribe(c=>{
+          course = c;
+          this.courses.push(course);
+        });
     }
+    this.calculateCredit();
   }
 }

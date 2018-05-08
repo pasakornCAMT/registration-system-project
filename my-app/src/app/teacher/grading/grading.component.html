@@ -8,54 +8,25 @@
               COURSE GRADING
             </div>
             <div class="card-body">
-              <h1><label class="col-form-label">Mathematics</label></h1>
+              <h1><label class="col-form-label">{{course.name}}</label></h1>
+              <div *ngFor="let student of students">
               <div class="form-group row">
-                <label class="col-sm-3 col-form-label">582115000</label>
-                <div class="col-sm-9">
-                  <div class="input-group mb-3">
-                    <label class="form-control ">Domenic Torresto</label>
-                    <select class="form-control col-sm-3 " id="select1" (change)="onClickGrade01($event)">
-                      <option selected>Grade</option>
-                      <option>A</option>
-                      <option>B</option>
-                      <option>C</option>
-                      <option>D</option>
-                      <option>F</option>
-                    </select>
+                  <label class="col-sm-3 col-form-label">{{student.studentId}}</label>
+                  <div class="col-sm-9">
+                    <div class="input-group mb-3">
+                      <label class="form-control ">{{student.name}}&nbsp;{{student.surname}}</label>
+                      <select class="form-control col-sm-3 " id="select1"
+                              (change)="onClickGrade01($event)" (change)="gradeChanged($event,student.enrolledCourse.indexOf(course.courseId),student)"
+                              value="{{student.grade[student.enrolledCourse.indexOf(course.courseId)]}}">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="F">F</option>
+                      </select>
+                    </div>
                   </div>
-                </div>
               </div>
-              <div class="form-group row">
-                <label class="col-sm-3 col-form-label">582115001</label>
-                <div class="col-sm-9">
-                  <div class="input-group mb-3">
-                    <label class="form-control">Johny English</label>
-                    <select class="form-control col-sm-3 " id="select12" (change)="onClickGrade02($event)">
-                      <option selected>Grade</option>
-                      <option>A</option>
-                      <option>B</option>
-                      <option>C</option>
-                      <option>D</option>
-                      <option>F</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-3 col-form-label">582115002</label>
-                <div class="col-sm-9">
-                  <div class="input-group mb-3">
-                    <label class="form-control">Nekky cossbender</label>
-                    <select class="form-control col-sm-3 " id="select3" (change)="onClickGrade03($event)">
-                      <option selected>Grade</option>
-                      <option>A</option>
-                      <option>B</option>
-                      <option>C</option>
-                      <option>D</option>
-                      <option>F</option>
-                    </select>
-                  </div>
-                </div>
               </div>
             </div>
             <div class="card-body">
@@ -110,7 +81,7 @@
                       <label class="form-control">{{gradeF}}</label>
                     </div>
                   </div>
-                </div>x
+                </div>
                 <div class="row">
                   <div class="col-sm-3">
                     <label class="col-form-label">GPA of the course: </label>

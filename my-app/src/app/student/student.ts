@@ -1,9 +1,10 @@
 export class Student{
-  id:number;
+  id:string;
   studentId:string;
   name:string;
   surname:string;
-  enrolled_course:string[];
+  enrolledCourse:string[];
+  grade:string[];
   email:string;
-  password:string;
+  //password:string;
 }

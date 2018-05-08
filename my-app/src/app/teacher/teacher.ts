@@ -4,6 +4,6 @@ export class Teacher{
   name:string;
   surname:string;
   email:string;
-  password:string;
-  teaching_course:string[];
+  //password:string;
+  teachingCourse:string[];
 }

@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {DataService} from '../service/data.service';
 import {Router} from '@angular/router';
 import {ADMINS, STUDENTS, TEACHERS} from '../mocks';
-import {Teacher} from '../teacher/teacher';
+import {AuthenticationService} from '../service/authentication.service';
+//import * as firebase from 'firebase';
+import {StudentDataFirestoreService} from '../service/student-data-firestore.service';
+import {TeacherDataFirestoreService} from '../service/teacher-data-firestore.service';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-login',
@@ -13,13 +17,17 @@ export class LoginComponent implements OnInit {
   email:string;
   password:string;
 
-  constructor(private router:Router,public dataService:DataService) {
+  constructor(private router:Router,
+              public dataService:DataService,
+              public authService: AuthenticationService,
+              public studentDataService:StudentDataFirestoreService,
+              public teacherDataService:TeacherDataFirestoreService) {
 
   }
 
   ngOnInit() {
   }
-
+/*
   login(email:string, password:string){
     this.dataService.email = email;
     this.dataService.password = password;
@@ -50,37 +58,33 @@ export class LoginComponent implements OnInit {
     }else {
       alert("e-mail or Password does not exist")
     }
-  }
+  }*/
 
-  verifyTeacherLogin(email:string, password:string){
-    let result = false;
-    for(let i = 0 ; i < TEACHERS.length ; i++){
-      if(email == TEACHERS[i].email && password == TEACHERS[i].password){
-        result = true;
-        break;
+  login(emailInput:string,passwordInput:string){
+    let email = firebase.auth().currentUser.email;
+    console.log(email);
+      //'student1@cmuSTU.ac.th';
+    this.authService.login(emailInput, passwordInput).then((data)=>{
+      console.log(data);
+      this.router.navigate(['course-list']);
+      this.authService.authenticated = true;
+      if(email.includes("@cmustu")){
+        this.studentDataService.getStudentByEmail(email).subscribe(data=>{
+         this.authService.student = data[0]; // Use the first student founded
+        });
+        this.authService.userType = 'student';
+      }else if(email.includes("@cmutea")){
+        this.teacherDataService.getTeacherByEmail(email).subscribe(data=>{
+          this.authService.teacher = data[0]; // Use the first teacher founded
+        });
+        this.authService.userType = 'teacher';
+      }else{
+        this.authService.userType = 'admin';
       }
-    }
-    return result;
+    }).catch((err)=>{
+      console.log('error: ',err);
+      alert('e-mail or Password does not exist');
+      this.authService.authenticated = false;
+    })
   }
-  verifyStudentLogin(email:string, password:string){
-    let result = false;
-    for(let i = 0 ; i < STUDENTS.length ; i++){
-      if(email == STUDENTS[i].email && password == STUDENTS[i].password){
-        result = true;
-        break;
-      }
-    }
-    return result;
-  }
-  verifyAdminLogin(email:string, password:string){
-    let result = false;
-    for(let i = 0 ; i < ADMINS.length ; i++){
-      if(email == ADMINS[i].email && password == ADMINS[i].password){
-        result = true;
-        break;
-      }
-    }
-    return result;
-  }
-
 }

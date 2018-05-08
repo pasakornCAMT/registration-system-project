@@ -5,7 +5,7 @@ import {GradingComponent} from './grading/grading.component';
 
 const teacherRoute: Routes = [
   {path: 'view-teacher', component: TeacherComponent},
-  {path: 'grading', component: GradingComponent},
+  {path: 'grading/:id', component: GradingComponent},
   {
     path: '',
     redirectTo: '/login',

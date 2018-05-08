@@ -4,6 +4,9 @@ import {Course} from "../course";
 import {COURSES, STUDENTS, TEACHERS} from "../../mocks";
 import {DataService} from '../../service/data.service';
 import {Student} from '../../student/student';
+import {CourseDataFirestoreService} from '../../service/course-data-firestore.service';
+import {AuthenticationService} from '../../service/authentication.service';
+import {StudentDataFirestoreService} from '../../service/student-data-firestore.service';
 
 
 @Component({
@@ -13,23 +16,33 @@ import {Student} from '../../student/student';
 })
 export class ListCourseComponent implements OnInit {
 
-  constructor(private router:Router, public dataService:DataService) { }
+  constructor(private router:Router,
+              public dataService:DataService,
+              public courseDataService:CourseDataFirestoreService,
+              public authService: AuthenticationService,
+              public studentDataService: StudentDataFirestoreService) { }
   courses:Course[];
   student:Student;
   course:any = {};
   ngOnInit() {
-      this.courses=COURSES;
-      this.student = this.findStudentByEmail(this.dataService.email);
+    this.courseDataService.getCourses().subscribe(courses => {
+      this.courses = courses;
+    });
   }
 
-  showDetail(id:string){
-    this.dataService.courseDetail = id;
-    this.router.navigate(['/view-course']);
+  showDetail(course:Course){
+    this.router.navigate(['/view-course',course.id]);
   }
 
   enrollCourse(course:Course){
-    this.student.enrolled_course.push(course.courseId);
-    this.router.navigate(['view-student'])
+    this.student = this.authService.student;
+    if(!this.student.enrolledCourse.includes(course.courseId)){
+      this.student.enrolledCourse.push(course.courseId);
+      this.studentDataService.updateCourse(this.student);
+      this.router.navigate(['view-student']);
+    }else{
+      alert('You cannot enrolled twice')
+    }
   }
 
   findStudentByEmail(email:string){

@@ -1,4 +1,12 @@
 import {Component, OnInit} from '@angular/core';
+import {TeacherDataFirestoreService} from '../../service/teacher-data-firestore.service';
+import {StudentDataFirestoreService} from '../../service/student-data-firestore.service';
+import {AuthenticationService} from '../../service/authentication.service';
+import {Student} from '../../student/student';
+import {Teacher} from '../teacher';
+import {Course} from '../../course/course';
+import {CourseDataFirestoreService} from '../../service/course-data-firestore.service';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 
 @Component({
   selector: 'app-grading',
@@ -7,7 +15,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class GradingComponent implements OnInit {
 
-  constructor() {
+  constructor(public teacherDataService: TeacherDataFirestoreService,
+              public studentDataService: StudentDataFirestoreService,
+              public authService: AuthenticationService,
+              public courseDataService: CourseDataFirestoreService,
+              public route: ActivatedRoute,
+              private router:Router) {
   }
 
   gradeA: number;
@@ -22,6 +35,12 @@ export class GradingComponent implements OnInit {
   previousGrade02: String;
   previousGrade03: String;
 
+  teacher: Teacher;
+  students: Student[]=[];
+  course: Course;
+  indexOfCourse: number;
+
+
   ngOnInit() {
     this.gradeA = 0;
     this.gradeB = 0;
@@ -33,6 +52,15 @@ export class GradingComponent implements OnInit {
     this.previousGrade01 = null;
     this.previousGrade02 = null;
     this.previousGrade03 = null;
+
+    this.teacher = this.authService.teacher;
+    this.route.params
+      .switchMap((params:Params)=> this.courseDataService.getCourse(params['id']))
+      .subscribe(course=>{
+        this.course = course;
+        this.generateStudentData();
+      });
+
   }
 
   // onClickGrade(event: Event) {
@@ -187,5 +215,22 @@ export class GradingComponent implements OnInit {
 
     this.numOfGradedStudent = this.gradeA + this.gradeB + this.gradeC + this.gradeD + this.gradeF;
     this.gpaOfCourse = ((4 * this.gradeA) + (3 * this.gradeB) + (2 * this.gradeC) + (this.gradeD)) / this.numOfGradedStudent;
+  }
+
+  private generateStudentData() {
+    let student: Student;
+    for(let i = 0 ; i < this.course.students.length ; i++){
+      this.studentDataService.getStudent(this.course.students[i])
+        .subscribe(s=>{
+          student = s;
+          this.students.push(student);
+        });
+    }
+  }
+
+  gradeChanged(event: Event,gradeIndex: number, student:Student){
+    student.grade[gradeIndex] = (event.target as HTMLSelectElement).value;
+    this.studentDataService.updateCourse(student);
+    //this.students.splice(this.students.indexOf(student),1);
   }
 }

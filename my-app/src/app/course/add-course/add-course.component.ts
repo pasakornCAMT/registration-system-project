@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Course} from '../course';
 import {COURSES} from '../../mocks';
 import {Router} from '@angular/router';
+import {CourseDataFirestoreService} from '../../service/course-data-firestore.service';
 
 @Component({
   selector: 'app-add-course',
@@ -9,15 +10,15 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-course.component.css']
 })
 export class AddCourseComponent implements OnInit {
-  constructor(private router:Router) {
+  constructor(private router:Router, public courseDataService: CourseDataFirestoreService) {
   }
   course:any = {};
   ngOnInit() {
   }
 
   addCourse(course:Course){
-    COURSES.push(course);
-    console.log(this.course.semester);
+    //COURSES.push(course);
+    this.courseDataService.addCourse(course);
     this.router.navigate(['/course-list'])
   }
 
